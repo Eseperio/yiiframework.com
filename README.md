@@ -102,14 +102,14 @@ gulp build
 # This step includes cloning the Yii 1 and Yii 2 repositories and a lot of computation,
 # so you might want to skip it on the first install.
 #
-# This also requires an instance of elasticsearch (>5.0) to be configured and running
+# This also requires an instance of elasticsearch to be configured and running
 # (if you do not have it, it will still run, but the site search will not work).
 # It also assumes you have pdflatex installed for building PDF guide docs.
 #
 # You may also build only parts of the docs, run  make help  for the available commands.
 make docs
 
-# populate the search index by running
+# populate the search index by running. This step is required to generate indexes of guide
 ./yii search/rebuild
 ```
 

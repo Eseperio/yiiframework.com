@@ -33,6 +33,15 @@ $config = [
             'enableAutoLogin' => true,
             'loginUrl' => ['auth/login'],
         ],
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/xenon',
+                'baseUrl' => '@web/themes/xenon',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/xenon/views',
+                ],
+            ],
+        ],
         'formatter' => $params['components.formatter'],
 
         'errorHandler' => [

@@ -22,3 +22,8 @@ Update gulp config file (config.yml)
 ```
 
 Run gulp build
+
+
+Comments:
+
+- Apidoc template should have `<!-- YII_VERSION_SELECTOR -->` placeholder inside the `.content` tag.

@@ -1,0 +1,148 @@
+.api-content {
+  .content:not(.pull-right) {
+    @extend .box;
+    h1 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+  }
+
+  a.tool-link {
+    float: right;
+    color: #ddd;
+    @include rem(margin, 0 8px);
+    &:hover {
+      color: white;
+      .glyphicon {
+        border:none;
+        background-color: $yii-green;
+        transform: scale(1.1);
+        &:after {
+          color: white;
+        }
+      }
+    }
+    &[href="#"] {
+      //Hidden because we already have common go to top button.
+      display: none;
+    }
+    .glyphicon {
+      border: 1px solid $gray-lighter;
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      border-radius: 100%;
+      text-align: center;
+      position: relative;
+      transition: all .3s ease;
+      &:after {
+        color: $gray-light;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        @include rem(font-size, 14px);
+        padding: 0;
+
+      }
+    }
+  }
+  .icon-hash:after {
+    content: '#';
+    @include rem(font-size, 32px);
+    font-weight: bold;
+    /*top: -10px;*/
+    line-height: 0.5;
+  }
+
+}
+
+.signature-defs {
+  color: #936;
+}
+
+.signature-type, .signature-type a {
+  color: #693;
+}
+
+.property-doc, .method-doc {
+  .detail-header {
+    font-weight: 400;
+    margin-top: $big-space;
+    vertical-align: middle;
+    border-color: $gray-lighter;
+    border-style: solid solid dashed solid;
+    border-width: 1px 1px 1px 1px;
+    padding: $normal-space;
+    margin-bottom: 0;
+  }
+  .detail-table {
+    td {
+      vertical-align: middle;
+      padding-top: $small-space;
+      padding-bottom: $small-space;
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .doc-description {
+    border-color: $gray-lighter;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+    padding: $normal-space;
+  }
+}
+
+.detail-header-tag.small {
+  vertical-align: middle;
+}
+
+#api-navigation {
+  box-shadow: $box-shadow;
+  .list-group-item {
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+
+    &.has-children {
+      &:not(.collapsed) {
+        &:after {
+          content: $fa-var-times;
+        }
+      }
+      &:after {
+        content: $fa-var-chevron-down;
+        @extend .fa;
+        font-size: 10px;
+        color: #ddd;
+        right: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    &.active {
+      &.has-children {
+        background-color: lighten($yii-blue, 10);
+      }
+      background-color: $yii-blue;
+      color: white;
+    }
+  }
+  .submenu {
+    &.in {
+      border-bottom: 1px solid #ddd;
+    }
+    a {
+      padding-left: $big-space;
+      font-size: .9em;
+    }
+    .api-ns-level-0 {
+      color: lighten(black, 80)
+    }
+  }
+
+}

@@ -1,15 +1,16 @@
 .section-header-wrap {
-  background-color: $yii-blue;
+  background-color: $section-header-bg-color;
   color: white;
-  padding: $big-space;
-  margin-bottom: $big-space;
+  padding: $section-header-padding;
+  margin-bottom: $section-header-padding;
   .section-headline {
     text-align: center;
-    @include rem('font-size', 30px);
+    @include rem('font-size', $section-header-headline-fontsize);
     font-weight: 500;
-    margin-bottom: $normal-space;
   }
   .version-selector {
+    margin-top: $section-header-margin-bottom;
+
     .btn-group {
       // fix for wrong version selection rendering
       + .btn-group {
@@ -18,13 +19,13 @@
         }
       }
       .btn {
-        border-color: white;
+        border-color: $section-header-forecolor;
 
       }
     }
   }
   a {
-    color: white;
+    color: $section-header-forecolor;
     text-decoration: none;
   }
 }

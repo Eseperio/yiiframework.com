@@ -93,7 +93,7 @@ $this->registerLinkTag([
         <div class="container">
             <div id="main-nav-head" class="navbar-header">
                 <a href="<?= Yii::$app->homeUrl ?>" class="navbar-brand">
-                    <img src="<?= Yii::getAlias('@web/image/logo.svg') ?>"
+                    <img src="<?= Yii::getAlias('@web/image/yii_logo_light.svg') ?>"
                          alt="Yii PHP Framework"
                          width="165" height="35"/>
                 </a>
@@ -152,28 +152,29 @@ $this->registerLinkTag([
                 ?>
                 <div class="nav navbar-nav navbar-right">
                     <?php
+                    if (Yii::$app->user->isGuest) {
+                        $items = [
+                            ['label' => 'Login', 'url' => ['/auth/login']]
+                        ];
+                    } else {
+                        $items = [
+                            [
+                                'label' => Html::encode(Yii::$app->user->identity->username),
+                                'url' => ['/auth/login'],
+                                'items' => [
+                                    ['label' => 'My account', 'url' => ['/user/profile']],
+                                    ['label'=>'Logout','url'=>['/auth/logout'],'linkOptions'=>['data-method'=>'post']],
+                                ]
+                            ]
+                        ];
+                    }
                     echo Nav::widget([
                         'id' => 'login-nav',
                         'encodeLabels' => true,
                         'options' => ['class' => 'nav navbar-nav navbar-main-menu'],
                         'activateItems' => false,
                         'dropDownCaret' => '<span class="caret"></span>',
-                        'items' => [
-                            Yii::$app->user->isGuest ? (
-                            ['label' => 'Login', 'url' => ['/auth/login']]
-                            ) : (
-                                '<li>'
-                                . Html::beginForm(['/auth/logout'], 'post', ['class' => 'navbar-form'])
-                                . Html::submitButton(
-                                    'Logout', // (' . Yii::$app->user->identity->username . ')',
-                                    ['class' => 'btn btn-link']
-                                )
-                                . Html::a(Html::encode(Yii::$app->user->identity->username), ['/user/profile'], ['class' => 'btn btn-link'])
-                                . Html::endForm()
-                                . '</li>'
-                            ),
-                        ]
-                    ]);
+                        'items' => $items]);
                     ?>
                 </div>
 

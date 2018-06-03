@@ -6,8 +6,22 @@ $yii-green: #7EC540;
 // Space sizes
 $small-space: 10px;
 $normal-space: $small-space * 2;
-$big-space: $small-space * 3;
+$big-space: $small-space * 4;
+
+//Section header
+$section-header-bg-color: $yii-blue;
+$section-header-padding: $big-space;
+$section-header-margin-bottom: $normal-space;
+$section-header-forecolor: white;
+$section-header-headline-fontsize: 38px;
+
+//boxes
+$box-shadow: 0px 2px 4px 0px rgba(black, .2);
+$box-bg-color: white;
 
 // Footer
 $footer-color: #ddd;
 $footer-background-color: white;
+
+//Code highlihting
+$font-size-codeblocks: 16px;

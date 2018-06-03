@@ -1,0 +1,7 @@
+.hashlink {
+  text-decoration: none;
+  display: none;
+  *:hover > & {
+    display: inline-block;
+  }
+}

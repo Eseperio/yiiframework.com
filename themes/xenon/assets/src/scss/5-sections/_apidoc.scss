@@ -1,4 +1,17 @@
 .api-content {
+  .top-nav {
+    color:$gray-lighter;
+    display: table;
+    width: 100%;
+    margin-bottom: $normal-space;
+    margin-top: $normal-space;
+    a {
+      display: table-cell;
+      text-align: center;
+      padding: $small-space;
+
+    }
+  }
   .content:not(.pull-right) {
     @extend .box;
     h1 {
@@ -7,6 +20,11 @@
       }
     }
 
+    ul{
+      li {
+        padding-bottom: $small-space;
+      }
+    }
   }
 
   a.tool-link {
@@ -67,7 +85,21 @@
   color: #693;
 }
 
+.property-doc {
+  .signature {
+    padding: $normal-space;
+    border-color: $gray-lighter;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;  }
+}
 .property-doc, .method-doc {
+  margin-bottom: $big-space;
+  + h2 {
+    font-weight: bold;
+    border-bottom:2px solid $gray-lighter;
+    margin-top: $big-space;
+    padding-bottom: $normal-space;
+  }
   .detail-header {
     font-weight: 400;
     margin-top: $big-space;
@@ -106,7 +138,6 @@
     border-radius: 0;
     border-right: 0;
     border-left: 0;
-
     &.has-children {
       &:not(.collapsed) {
         &:after {
@@ -140,9 +171,11 @@
       padding-left: $big-space;
       font-size: .9em;
     }
-    .api-ns-level-0 {
-      color: lighten(black, 80)
-    }
+
   }
+  .api-ns-level-0 {
+    color: lighten(black, 80)
+  }
+
 
 }

@@ -84,8 +84,7 @@ ol.hl-main pre {
 }
 pre {
   background-color: transparent;
-  padding: $normal-space;
-  padding-left: 0;
+  padding: 0 0 $normal-space 0;
   border:none;
 }
 .hljs {
@@ -95,7 +94,9 @@ pre {
   font-family: $font-family-monospace;
   color: #000;
   background-color: #fbfbfb;
-  border-left: 2px solid $yii-blue;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-color: $gray-lighter;
   overflow: auto;
   word-wrap: normal;
   white-space: pre;

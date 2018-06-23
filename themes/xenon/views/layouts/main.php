@@ -84,7 +84,8 @@ $this->registerLinkTag([
 
     <?php $this->head() ?>
 </head>
-<body data-spy="scroll" data-target="#scrollnav" data-offset="1">
+<body data-spy="scroll" data-target="#scrollnav" data-offset="1"
+      class="<?= Yii::$app->controller->id ?>-<?= Yii::$app->controller->action->id ?>">
 <?php $this->beginBody() ?>
 
 <div id="page-wrapper" class="">
@@ -163,7 +164,7 @@ $this->registerLinkTag([
                                 'url' => ['/auth/login'],
                                 'items' => [
                                     ['label' => 'My account', 'url' => ['/user/profile']],
-                                    ['label'=>'Logout','url'=>['/auth/logout'],'linkOptions'=>['data-method'=>'post']],
+                                    ['label' => 'Logout', 'url' => ['/auth/logout'], 'linkOptions' => ['data-method' => 'post']],
                                 ]
                             ]
                         ];

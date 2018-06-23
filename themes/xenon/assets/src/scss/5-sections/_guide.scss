@@ -1,0 +1,151 @@
+.guide-content {
+
+  @extend .box;
+  .broken-link {
+    background: #FFE4EF;
+    border-bottom: 1px solid lightpink;
+  }
+
+  .prev-next {
+    @include rem(margin-top, 40px);
+    @include rem(margin-bottom, 20px);
+    @include rem(padding-bottom, 20px);
+    border-bottom: 1px solid $gray-lighter;
+    a {
+      text-decoration: none;
+      vertical-align: middle;
+      @extend .btn;
+      @extend .btn-primary;
+
+    }
+    @media screen and (max-width: $screen-xs-max) {
+      a {
+        display: block;
+      }
+
+      .pull-right, .pull-left {
+        float: none !important;
+        @include rem(margin-bottom,10px);
+      }
+
+    }
+
+  }
+  .panel-heading {
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+  .guide-panel .panel-body {
+    > ul.list-unstyled {
+      border-top: 1px dashed $gray;
+      @include rem(padding-top, 12px);
+      li {
+        @include rem(margin-bottom, 12px);
+      }
+    }
+  }
+
+  ul {
+    @include rem(padding-left, 30px);
+    list-style-type: none;
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    li:before {
+      color: $yii-green;
+      content: "⁃";
+      margin-right: 4pt;
+    }
+  }
+
+}
+
+.edit-box {
+  //@include rem(margin-top, 18px);
+  @include rem(padding, 10px);
+  @include rem(padding-bottom, 4px);
+  @include rem(line-height, 18px);
+  margin-bottom: 0.8em;
+  color: $gray-light;
+  @media screen and (min-width: $screen-xs-min) {
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+  p {
+    @include rem(margin-top, 2px);
+  }
+  .edit-icon {
+    margin-right: 1.5em;
+    margin-bottom: .5em;
+    margin-left: 1.5em;
+    float: left;
+    i {
+      font-size: 3.5em;
+      color: $gray;
+    }
+  }
+}
+
+.hashlink {
+  display: none;
+  text-decoration: none;
+}
+
+.hashlink:hover {
+  display: inline;
+  text-decoration: none;
+}
+
+h1:hover .hashlink,
+h2:hover .hashlink,
+h3:hover .hashlink,
+h4:hover .hashlink,
+h5:hover .hashlink,
+h6:hover .hashlink {
+  display: inline;
+}
+
+.guide-content h1:first-of-type {
+  margin-top: 0;
+}
+
+div.toc {
+  border: solid 1px #ddd;
+  @include rem(padding, 15px);
+  @include rem(margin, 15px 0);
+  width: auto;
+  max-width: 36em;
+
+  ol {
+    margin: 0;
+    width: auto;
+  }
+}
+
+div.image {
+  border: solid 1px #ddd;
+  padding: 0;
+  @include rem(margin, 15px 0);
+  width: auto;
+  //    max-width: 36em;
+  text-align: center;
+
+  p {
+    background: #eee;
+    text-align: center;
+    margin: 0;
+    max-width: 100%;
+  }
+  img {
+    margin: 15px auto;
+    padding: 0;
+    max-width: 100%;
+  }
+  img.img-responsive {
+    padding: 0;
+    border: none;
+  }
+}

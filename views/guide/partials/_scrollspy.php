@@ -10,7 +10,7 @@ use yii\helpers\Html;
 
 ?>
 <div class="visible-huge fixed">
-    <nav id="scrollnav" data-spy="affix" data-offset-top="120">
+    <nav id="scrollnav" data-spy="affix" data-offset-top="130">
         <ul class="nav hidden-xs hidden-sm">
             <?php
                 echo '<li>' . Html::a($section->getTitle(), '#' . (isset($section->headings['id']) ? $section->headings['id'] : '')) . '</li>';

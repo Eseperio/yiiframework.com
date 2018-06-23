@@ -27,3 +27,4 @@ Run gulp build
 Comments:
 
 - Apidoc template should have `<!-- YII_VERSION_SELECTOR -->` placeholder inside the `.content` tag.
+- Apidoc for v1.1 needs a change in layout. Left column must be wider

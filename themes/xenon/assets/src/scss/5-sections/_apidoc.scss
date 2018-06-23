@@ -1,6 +1,6 @@
 .api-content {
   .top-nav {
-    color:$gray-lighter;
+    color: $gray-lighter;
     display: table;
     width: 100%;
     margin-bottom: $normal-space;
@@ -20,7 +20,7 @@
       }
     }
 
-    ul{
+    ul {
       li {
         padding-bottom: $small-space;
       }
@@ -34,7 +34,7 @@
     &:hover {
       color: white;
       .glyphicon {
-        border:none;
+        border: none;
         background-color: $yii-green;
         transform: scale(1.1);
         &:after {
@@ -90,13 +90,15 @@
     padding: $normal-space;
     border-color: $gray-lighter;
     border-style: solid;
-    border-width: 1px 1px 1px 1px;  }
+    border-width: 1px 1px 1px 1px;
+  }
 }
+
 .property-doc, .method-doc {
   margin-bottom: $big-space;
   + h2 {
     font-weight: bold;
-    border-bottom:2px solid $gray-lighter;
+    border-bottom: 2px solid $gray-lighter;
     margin-top: $big-space;
     padding-bottom: $normal-space;
   }
@@ -139,7 +141,7 @@
     border-right: 0;
     border-left: 0;
     &.has-children {
-      &:not(.collapsed) {
+      &[aria-expanded="true"] {
         &:after {
           content: $fa-var-times;
         }
@@ -154,6 +156,7 @@
         top: 50%;
         transform: translateY(-50%);
       }
+
     }
     &.active {
       &.has-children {
@@ -177,5 +180,79 @@
     color: lighten(black, 80)
   }
 
+}
 
+//Yii1.0 docs
+.api1 {
+  pre {
+    @extend .content;
+    @extend pre;
+    @extend code;
+  }
+
+  div.code {
+    @extend .content;
+    @extend pre;
+    @extend code;
+
+    display: none;
+  }
+
+  table.summaryTable {
+    @extend .table;
+    @extend .table-bordered;
+    @extend .table-striped;
+
+    width: 100%;
+    @include rem(margin, 18px 0);
+  }
+
+  table.docClass {
+    th {
+      width: 25%;
+    }
+  }
+
+  .detailHeader {
+    font-weight: bold;
+    @include rem(font-size, 12px);
+    @include rem(margin, 30px 0 5px 0);
+    border-bottom: 1px solid #ddd;
+  }
+
+  .detailHeaderTag {
+    font-weight: normal;
+    @include rem(font-size, 10px);
+  }
+
+  .paramNameCol {
+    width: 12%;
+    font-weight: bold;
+  }
+
+  .paramTypeCol {
+    width: 12%;
+  }
+
+  .sourceCode {
+    @include rem(margin, 5px 0);
+    @include rem(padding, 5px);
+    background: #f9f9f9;
+    white-space: normal;
+
+    a.show {
+      display: inline !important;
+    }
+  }
+
+  #nav {
+    @include rem(padding, 3px);
+    @include rem(margin, 0 0 10px 0);
+    border-top: 1px #ddd solid;
+  }
+
+  #classDescription {
+    @extend .content;
+    @extend p;
+  }
 }

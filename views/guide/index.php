@@ -14,7 +14,7 @@ $this->endBlock();
 
 ?>
 <div class="container guide-view lang-<?= $guide->language ?>">
-    <div class="guide-content content">
+    <div class="content">
 
         <?= \app\widgets\SearchForm::widget([
             'type' => 'guide',

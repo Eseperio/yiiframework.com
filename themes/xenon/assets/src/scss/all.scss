@@ -6,8 +6,8 @@
 @import "styles/github";
 
 // 1 Settings
-@import "1-settings/bootstrap-custom-variables";
 @import "1-settings/theme-variables";
+@import "1-settings/bootstrap-custom-variables";
 // 2 Vendors
 @import "2-vendors/custom-bootstrap";
 @import "2-vendors/glyphicons-adapter";
@@ -25,6 +25,7 @@
 @import "4-components/guide-scrollnav";
 @import "4-components/search-mini";
 @import "4-components/user-notes";
+@import "4-components/vote-box";
 
 //Sections
 @import "5-sections/apidoc";

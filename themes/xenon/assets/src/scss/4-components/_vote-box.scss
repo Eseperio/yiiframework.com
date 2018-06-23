@@ -1,0 +1,20 @@
+.vote-box {
+  .voting {
+  }
+  .votes-up, .votes-down {
+    &:before {
+      @extend .fa;
+      content: $fa-var-arrow-circle-up;
+    }
+  }
+  .votes-up {
+  }
+  .votes-down {
+    &:before {
+      content: $fa-var-arrow-circle-down;
+    }
+  }
+  .votes {
+
+  }
+}

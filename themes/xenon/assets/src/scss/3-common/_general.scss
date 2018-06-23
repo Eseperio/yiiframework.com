@@ -1,6 +1,6 @@
 h1 {
   padding-bottom: 20px;
-position: relative;
+  position: relative;
   &:after {
     position: absolute;
     content: "";
@@ -14,12 +14,33 @@ position: relative;
 }
 
 blockquote {
-  border:2px dashed lighten($yii-blue,10);
+  border: 2px dashed lighten($yii-blue, 10);
   border-radius: $border-radius-base;
   color: $gray;
   padding: $normal-space;
-  background-color: lighten($yii-blue,44);
+  background-color: lighten($yii-blue, 44);
   code {
     background-color: white;
+  }
+}
+
+.call2action {
+  margin-top: $normal-space;
+  margin-bottom: $normal-space;
+  background-color: white;
+  box-shadow: $box-shadow;
+  padding: $normal-space;
+  border-radius: 10px;
+  border-left: 20px solid $yii-green;
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }

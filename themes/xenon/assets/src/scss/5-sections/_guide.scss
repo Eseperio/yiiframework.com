@@ -10,6 +10,7 @@
   }
   .guide-panel {
     @extend .box;
+    padding: $normal-space;
     width: 100%;
     @include rem(margin-bottom,$normal-space);
     li {

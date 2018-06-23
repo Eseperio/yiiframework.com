@@ -1,3 +1,28 @@
+.guide-content-index {
+  @media screen and (min-width: $screen-md-max){
+    .row {
+      display: flex;
+      [class^="col-"] {
+        display: flex;
+      }
+    }
+
+  }
+  .guide-panel {
+    @extend .box;
+    width: 100%;
+    @include rem(margin-bottom,$normal-space);
+    li {
+      @include rem(margin-bottom,4px);
+    }
+  }
+  a {
+    &:visited {
+      color:darken($link-color,20);
+    }
+  }
+}
+
 .guide-content {
 
   @extend .box;

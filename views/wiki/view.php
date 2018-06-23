@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = $model->title;
 
 ?>
-<div class="container guide-view lang-en" xmlns="http://www.w3.org/1999/xhtml">
+<div class="container wiki-view lang-en" xmlns="http://www.w3.org/1999/xhtml">
     <div class="row">
         <div class="col-sm-3 col-md-2 col-lg-2">
             <?= $this->render('_sidebar', [

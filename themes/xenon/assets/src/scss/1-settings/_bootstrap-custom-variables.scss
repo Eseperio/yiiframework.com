@@ -188,7 +188,7 @@ $btn-danger-border:              darken($btn-danger-bg, 5%) ;
 $btn-link-disabled-color:        $gray-light ;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:         $border-radius-base ;
+$btn-border-radius-base:         2px ;
 $btn-border-radius-large:        $border-radius-large ;
 $btn-border-radius-small:        $border-radius-small ;
 
@@ -873,7 +873,7 @@ $headings-small-color:        $gray-light ;
 //** Blockquote small color
 $blockquote-small-color:      $gray-light ;
 //** Blockquote font size
-$blockquote-font-size:        ($font-size-base * 1.25) ;
+$blockquote-font-size:        ($font-size-base * 1.05) ;
 //** Blockquote border color
 $blockquote-border-color:     $gray-lighter ;
 //** Page header border color

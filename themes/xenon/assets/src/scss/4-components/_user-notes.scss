@@ -1,0 +1,39 @@
+.comments-wrapper {
+  .heading {
+    text-align: center;
+    @extend .h2;
+    @include rem(margin-top,30px);
+    display: block;
+  }
+
+  .comment {
+    @extend .box;
+    @include rem(margin-top,$normal-space);
+  }
+
+  .comment-footer {
+    border-top:1px solid $gray-lighter;
+    @include rem(padding-top,10px);
+    @include rem(margin-top,10px);
+    .date {
+      color:$gray-light;
+    }
+  }
+
+  form {
+    @extend .box;
+    padding-bottom: $normal-space / 2;
+    @include rem(margin-bottom,20px);
+
+    .CodeMirror-buttonsPanel {
+      text-align: center;
+      @include rem(margin-bottom,10px);
+
+      > button {
+        border:none;
+      }
+    }
+    .CodeMirror {
+    }
+  }
+}

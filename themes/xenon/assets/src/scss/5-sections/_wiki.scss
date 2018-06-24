@@ -5,7 +5,6 @@
     @include rem(padding-bottom, $normal-space);
     .title {
       margin-top: 0;
-
     }
   }
 
@@ -32,10 +31,12 @@
     > div {
       @include rem(padding-bottom, 16px);
     }
-    span {
-      color: $gray-light;
-      text-transform: uppercase;
-      font-size: 11px;
+    > div:not(.voting) {
+      span {
+        color: $gray-light;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
     }
 
     .tags {
@@ -113,7 +114,7 @@
 .diff, .memo {
   font-family: $font-family-monospace;
   font-weight: normal;
-  @include rem(font-size, $font-size-codeblocks);
+  //@include rem(font-size, $font-size-codeblocks);
 
   color: #000;
   background-color: #fcfcfc;
@@ -158,7 +159,6 @@
   font-size: 1.8rem;
   background: $yii-blue;
   color: white;
-  margin-top: 1.5rem;
   margin-bottom: $normal-space;
   box-shadow: $box-shadow;
   border-bottom: 3px solid darken($yii-blue, 10);
@@ -176,9 +176,19 @@
     color: white;
     transition: all .3s ease;
     transform: translateY(-10%);
-    box-shadow: 0 4px 4px 0px rgba(black,.2);
+    box-shadow: 0 4px 4px 0px rgba(black, .2);
   }
   &:active {
     background: lighten($yii-blue, 20);
   }
 }
+
+  .wiki-row {
+    @extend .box;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }

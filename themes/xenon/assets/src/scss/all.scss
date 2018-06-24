@@ -14,6 +14,7 @@
 @import "2-vendors/contributors";
 // 3 Common
 @import "3-common/general";
+@import "3-common/admin";
 @import "3-common/hashlink";
 @import "3-common/scrollup";
 @import "3-common/boxes";
@@ -44,3 +45,5 @@
 @import "5-sections/download";
 @import "5-sections/contribute";
 @import "5-sections/team";
+@import "5-sections/news";
+@import "5-sections/auth";

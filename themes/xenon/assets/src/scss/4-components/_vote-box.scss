@@ -5,6 +5,7 @@
   }
   .votes-up, .votes-down {
     @extend .btn;
+    padding: 2px 10px;
     &:before {
       @extend .fa;
       content: $fa-var-arrow-circle-up;

@@ -1,0 +1,39 @@
+.login-wrapper {
+  background-color: $yii-blue;
+  padding-top: $big-space;
+  padding-bottom: $big-space;
+  .btn.btn-lg {
+    border-radius: 30px;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: $normal-space / 2;
+    padding-bottom: $normal-space / 2;
+    border-bottom:1px solid $gray-lighter;
+  }
+
+  .login-control {
+    @extend .form-control;
+  }
+}
+.main-login {
+  text-align: center;
+
+  input {
+    padding: $small-space $normal-space;
+    height: auto;
+    border:1px solid $gray-lighter;
+    border-radius: 30px;
+  }
+
+}
+.social-login {
+  .github-icon {
+    font-size: 3em;
+  }
+  color:white;
+  .btn {
+    border:1px solid white;
+    color: white;
+  }
+}

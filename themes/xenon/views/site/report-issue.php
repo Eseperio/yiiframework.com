@@ -6,16 +6,16 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 $this->title = 'Report an Issue';
 $this->params['breadcrumbs'][] = $this->title;
-$this->context->sectionTitle=$this->title;
+$this->context->sectionTitle = $this->title;
 
 ?>
 
 <div class="container report">
-    <div class="box bottom-space">
-        <div class="row">
-            <div class="content">
-                <div class="col-md-12">
-                    <p>Thanks for helping to make Yii better!</p>
+
+    <div class="row">
+        <div class="content">
+            <div class="col-md-12">
+                <div class="box bottom-space"><h3>Thanks for helping to make Yii better!</h3>
 
                     <p>To ensure the issue gets reported to the right place, you need to find out whether it is an issue
                         in the Yii framework
@@ -25,10 +25,10 @@ $this->context->sectionTitle=$this->title;
                         fix it before the details
                         of the issue are publicly
                         disclosed. <?= Html::a('Go to the contact page!', Url::to(['site/security'])) ?></p>
+                </div>
+                <div class="box bottom-space">
+                    <h2 class="margin-top-0"><span>Yii 2.0</span></h2>
 
-                    <div class="heading-separator">
-                        <h2><span>Yii 2.0</span></h2>
-                    </div>
 
                     <p class="text-center medium">General issues, that affect the Yii core framework, should be reported
                         on Github in the <a target="_blank" rel="noopener noreferrer"
@@ -36,12 +36,13 @@ $this->context->sectionTitle=$this->title;
                     </p>
                     <p class="text-center">
                         <a class="btn btn-lg btn-default github-btn"
-                           href="https://github.com/yiisoft/yii2/issues/new"><i class="fa fa-github"></i><span>Report issue</span></a>
+                           href="https://github.com/yiisoft/yii2/issues/new"><i
+                                    class="fa fa-github"></i><span>Report issue</span></a>
                     </p>
+                </div>
+                <div class="box bottom-space">
+                    <h2 class="margin-top-0">Yii 2.0 Extensions</h2>
 
-                    <div class="heading-separator">
-                        <h2><span>Yii 2.0 Extensions</span></h2>
-                    </div>
 
                     <p class="text-center medium">If the error or feature request is for one of the official extensions,
                         please select below:</p>
@@ -92,11 +93,9 @@ $this->context->sectionTitle=$this->title;
                         just report it on the
                         <a href="https://github.com/yiisoft/yii2/issues/new">framework issue tracker</a>.<br/>We will
                         figure out where it belongs and move it later.</p>
-
-                    <div class="heading-separator">
-                        <h2><span>Yii 1.1</span></h2>
-                    </div>
-
+                </div>
+                <div class="box bottom-space">
+                    <h2 class="margin-top-0">Yii 1.1</h2>
                     <p class="text-center medium">If you want to report a bug for Yii 1.1, please open an issue in the
                         <a target="_blank" rel="noopener noreferrer"
                            href="https://github.com/yiisoft/yii">yiisoft/yii</a> repository.</p>
@@ -110,9 +109,9 @@ $this->context->sectionTitle=$this->title;
                                 href="<?= Yii::getAlias('@web/news/90/update-on-yii-1-1-support-and-end-of-life/') ?>">maintenance
                             mode</a>,
                         we will only accept security fixes and changes for compatibility with PHP 7.<br>Please consider
-                        upgrading to Yii 2 instead.</p>
-                </div>
+                        upgrading to Yii 2 instead.</p></div>
             </div>
         </div>
     </div>
+
 </div>

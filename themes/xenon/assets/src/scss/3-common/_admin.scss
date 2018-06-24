@@ -1,0 +1,14 @@
+.admin-nav {
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    a {
+      border:1px solid white;
+      &:hover {
+        background-color: lighten($yii-blue,15);
+      }
+    }
+  }
+}

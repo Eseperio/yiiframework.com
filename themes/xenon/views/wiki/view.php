@@ -84,7 +84,7 @@ $this->title = $model->title;
 
                     <?php if (Yii::$app->user->can(\app\components\UserPermissions::PERMISSION_MANAGE_WIKI)): ?>
                         <div class="side-panel">
-                            <?= Html::a('View as Admin', ['wiki-admin/view', 'id' => $model->id]) ?>
+                            <?= Html::a('View as Admin', ['wiki-admin/view', 'id' => $model->id],['class'=>'btn btn-warning btn-block']) ?>
                         </div>
                     <?php endif; ?>
 

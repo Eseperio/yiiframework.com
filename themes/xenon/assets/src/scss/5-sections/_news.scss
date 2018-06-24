@@ -1,0 +1,14 @@
+.news-index,.news-view {
+  .side-panel {
+    h2 {
+      @extend .side-title;
+    }
+  }
+}
+
+.news-update,.news-admin,.news-create {
+  .content{
+    @extend .box;
+    margin-bottom: $normal-space;
+  }
+}

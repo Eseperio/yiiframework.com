@@ -1,0 +1,21 @@
+.error-container {
+  padding: $big-space;
+}
+.error-wrapper {
+  background-color: $yii-blue;
+}
+.status-code {
+  color: lighten($yii-blue,5);
+  line-height: 1em;
+  font-weight: bolder;
+  @media screen and (min-width: $screen-md-max){
+    font-size: 18em;
+
+  }
+}
+.error-description {
+  font-size: $font-size-base * 1.3
+}
+.error-notes {
+  color: $gray-light;
+}

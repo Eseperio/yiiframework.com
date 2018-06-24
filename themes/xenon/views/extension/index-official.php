@@ -27,6 +27,7 @@ $this->title = 'Official Extensions';
         <div class="col-sm-9 col-md-10 col-lg-10" role="main">
 
             <h1>Official Extensions <small>Maintained by the Yii Team</small></h1>
+            <?= $this->render('partials/_originSelector',['official'=>true]) ?>
 
             <div class="panel panel-default">
                 <div class="panel-body">

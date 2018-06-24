@@ -20,7 +20,8 @@ use yii\helpers\Html;
 
 <?php if (UserPermissions::canUpdateExtension($model)): ?>
     <div class="side-panel">
-        <?= Html::a('Update Extension', ['extension/update', 'id' => $model->id],['class'=>'btn btn-primary btn-block']) ?><br>
+        <?= Html::a('Update Extension', ['extension/update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
+        <br>
         <?php if (!$model->from_packagist): ?>
             <?= Html::a('Manage Downloads', ['extension/files', 'id' => $model->id]) ?><br>
         <?php endif; ?>
@@ -32,12 +33,16 @@ use yii\helpers\Html;
 <?php endif; ?>
 
 <?php if ($model->from_packagist): ?>
-    <?= Html::a('Packagist Profile', $model->packagist_url, ['target' => '_blank', 'rel' => 'noopener noreferrer']) ?>
-    <br>
+    <div class="side-panel">
+        <h3 class="side-title">Packagist</h3>
+        <?= Html::a('Packagist Profile', $model->packagist_url, ['target' => '_blank', 'rel' => 'noopener noreferrer']) ?>
+    </div>
 <?php endif; ?>
 <?php if ($model->github_url): ?>
-    <?= Html::a(strpos($model->github_url, 'github.com/') !== false ? 'Github Repository' : 'Code Repository', $model->github_url, ['target' => '_blank', 'rel' => 'noopener noreferrer']) ?>
-    <br>
+    <div class="side-panel">
+        <h3 class="side-title"><i class="fa fa-github"></i> GitHub</h3>
+        <?= Html::a(strpos($model->github_url, 'github.com/') !== false ? 'Github Repository' : 'Code Repository', $model->github_url, ['target' => '_blank', 'rel' => 'noopener noreferrer']) ?>
+    </div>
 <?php endif; ?>
 
 
@@ -47,13 +52,13 @@ if (!empty($downloads)): ?>
     <div class="side-panel">
         <h3 class="side-title">Downloads</h3>
 
-    <ul>
-        <?php foreach ($downloads as $download) {
-            echo Html::tag('li', Html::a(Html::encode($download->file_name), $model->getUrl('download', ['filename' => $download->file_name])));
-        } ?>
-    </ul>
+        <ul>
+            <?php foreach ($downloads as $download) {
+                echo Html::tag('li', Html::a(Html::encode($download->file_name), $model->getUrl('download', ['filename' => $download->file_name])));
+            } ?>
+        </ul>
 
-    <?= Html::a('show all', ['extension/files', 'id' => $model->id]) ?>
+        <?= Html::a('show all', ['extension/files', 'id' => $model->id]) ?>
     </div>
 
 
@@ -62,11 +67,12 @@ if (!empty($downloads)): ?>
 <?php $related = $model->getRelatedExtensions() ?>
 <?php if (!empty($related)): ?>
 
-   <div class="side-panel"> <h3 class="side-title">Related Extensions</h3>
+    <div class="side-panel"><h3 class="side-title">Related Extensions</h3>
 
-    <ul>
-        <?php foreach ($related as $extension) {
-            echo "<li>" . Html::a(Html::encode($extension->getLinkTitle()), $extension->getUrl()) . '</li>';
-        } ?>
-    </ul></div>
+        <ul>
+            <?php foreach ($related as $extension) {
+                echo "<li>" . Html::a(Html::encode($extension->getLinkTitle()), $extension->getUrl()) . '</li>';
+            } ?>
+        </ul>
+    </div>
 <?php endif; ?>

@@ -20,6 +20,10 @@
     }
   }
 
+  .comment-id {
+    font-size: $font-size-h1;
+    color: $gray-lighter;
+  }
   form {
     @extend .box;
     padding-bottom: $normal-space / 2;

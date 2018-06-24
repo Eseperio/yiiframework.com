@@ -1,0 +1,66 @@
+
+.site-community {
+  .box {
+    h2 {
+      margin-top: 0;
+      color: $gray-light
+    }
+  }
+}
+
+.xicons {
+  padding: 0;
+  li {
+    display: inline-block;
+    margin-right: $normal-space;
+  }
+  .xcard {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: $box-shadow;
+    text-align: center;
+    transition: all .3s ease;
+    a:hover {
+      text-decoration: none;
+    }
+    &:hover {
+      transform: translateY(-10%);
+    }
+    span {
+      border-top: 1px solid $gray-lighter;
+      padding: 8px 2px;
+      display: block;
+      font-size: $font-size-base * .85;
+    }
+  }
+  .xicon {
+    padding: 14px;
+    display: block;
+    height: $xicon-height;
+    width: $xicon-width;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    &.irc {
+      background-image: url("../imgs/chat.svg");
+    }
+    &.slack {
+      background-image: url("../imgs/slack.svg");
+    }
+    &.stack-overflow {
+      background-image: url("../imgs/stack-overflow.svg");
+    }
+    &.facebook {
+      background-image: url("../imgs/facebook.svg");
+    }
+    &.twitter {
+      background-image: url("../imgs/twitter.svg");
+    }
+    &.reddit {
+      background-image: url("../imgs/reddit.svg");
+    }
+  }
+}

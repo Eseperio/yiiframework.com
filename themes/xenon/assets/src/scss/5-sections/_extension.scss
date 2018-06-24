@@ -65,17 +65,38 @@
 }
 
 .extension-view {
-  .extension-row {
-    @extend .box;
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-      &:first-child {
-        margin-top: 0;
-      }
+
+}
+.extension-row,#extension-form {
+  @extend .box;
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    &:first-child {
+      margin-top: 0;
     }
   }
 }
 
 .btn-new-extension {
   @extend .btn-new-wiki-article;
+}
+
+.author-selection {
+  margin-bottom: $normal-space;
+    .btn {
+      text-transform: uppercase;
+      padding: 6px $big-space;
+      &:first-child {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+      &:last-child {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+      &.active {
+        background-color: darken($yii-blue,10);
+        color:lighten($yii-blue,20);
+      }
+  }
 }

@@ -11,6 +11,7 @@
 // 2 Vendors
 @import "2-vendors/custom-bootstrap";
 @import "2-vendors/glyphicons-adapter";
+@import "2-vendors/contributors";
 // 3 Common
 @import "3-common/general";
 @import "3-common/hashlink";
@@ -26,6 +27,7 @@
 @import "4-components/search-mini";
 @import "4-components/user-notes";
 @import "4-components/vote-box";
+@import "4-components/rank_link";
 
 //Sections
 @import "5-sections/apidoc";
@@ -33,3 +35,12 @@
 @import "5-sections/wiki";
 @import "5-sections/search";
 @import "5-sections/extension";
+@import "5-sections/community";
+@import "5-sections/chat";
+@import "5-sections/halloffame";
+@import "5-sections/badges";
+@import "5-sections/error-page";
+@import "5-sections/resources";
+@import "5-sections/download";
+@import "5-sections/contribute";
+@import "5-sections/team";

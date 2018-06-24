@@ -1,0 +1,105 @@
+
+.container.download {
+  color: #4d4d4d;
+  margin-bottom: 6rem;
+
+  p {
+    font-size: 1.8rem;
+  }
+
+  .small {
+    font-size: 1.6rem;
+  }
+
+  .medium {
+    font-size: 2.3rem;
+  }
+
+  .separator {
+    padding: 0 1rem;
+  }
+
+  .install {
+    line-height: 2.6rem;
+    padding-top: 1.6rem;
+  }
+
+  .ptrem1 {
+    padding: 1rem 0;
+  }
+
+  .ptrem2 {
+    padding: 2rem 0;
+  }
+
+  .download-btn {
+    border-color: $gray-light;
+    color: $gray-light;
+    border-width: 2px;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.8rem 2.2rem;
+    font-weight: normal;
+    letter-spacing: 0rem;
+    max-width: 350px;
+    margin: auto;
+    margin-top: $normal-space;
+    margin-bottom: $normal-space;
+    i {
+      font-size: 4rem;
+    }
+
+    span {
+      display: block;
+      white-space: initial;
+    }
+  }
+
+  h1 {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  pre code {
+    padding: 2rem 4rem;
+  }
+
+  ul.offline-doc-v2 {
+    text-align: center;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin: 3rem;
+
+      img {
+        box-shadow: 0 0 0.5rem #DDD;
+        margin-bottom: 2rem;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  ul.offline-doc-v1 {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 2rem;
+      a {
+        padding: $small-space $big-space;
+        border: 2px solid $gray-lighter;
+        border-radius: 3px;
+        display: block;
+        &:hover {
+          border-color: $gray;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}

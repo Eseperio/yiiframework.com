@@ -62,7 +62,7 @@ $this->title = $model->title . ' | History';
 
                         <p>Select exactly two versions for comparison.</p>
 
-                        <?= Html::submitButton('Compare Versions') ?>
+                        <?= Html::submitButton('Compare Versions',['class'=>'btn btn-primary']) ?>
 
                         <?= Html::endForm() ?>
 

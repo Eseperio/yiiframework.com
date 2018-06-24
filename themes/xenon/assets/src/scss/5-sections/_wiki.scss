@@ -35,7 +35,7 @@
 .vote-box {
 
   > div {
-    @include rem(padding-bottom, 16px);
+    @include rem(padding-bottom, 10px);
   }
   > div:not(.voting) {
     span {
@@ -53,6 +53,7 @@
       @extend .label;
       border: 1px solid $yii-blue;
       color: $yii-blue;
+      display: inline-block;
       &:hover, &:focus {
         background-color: $yii-blue;
       }
@@ -61,43 +62,11 @@
   }
 }
 
-.wiki-side-panel {
-  @extend .box;
-  @include rem(padding, $small-space);
-  margin-bottom: $normal-space;
+.side-panel {
   .wiki-side-title {
-    color: $gray;
-    font-size: $font-size-base;
-    font-weight: bold;
-    border-bottom: 1px solid $gray-lighter;
-    text-transform: uppercase;
-    margin: 0;
-    padding-bottom: $small-space;
-    margin-bottom: $small-space;
+    @extend .side-title
   }
-  ul {
-    padding: 0;
-    list-style: none;
-    li {
-      margin-bottom: 3px;
-      a {
-        padding-left: 4px;
-        span {
-          color: $gray-light;
-        }
-      }
-      &.active, &.asc, &.desc {
-        a {
-          color: white;
-          padding: 4px;
-          padding-left: 8px;
-          display: block;
-          background-color: $yii-blue;
 
-        }
-      }
-    }
-  }
 
   &.revisions {
     li {
@@ -218,5 +187,24 @@
     &:first-child {
       margin-top: 0;
     }
+  }
+}
+
+.wiki-form {
+  @extend .box;
+}
+
+blockquote{
+  .next-revision,.prev-revision {
+    border:1px solid $yii-blue;
+    color: $yii-blue;
+    padding: 8px 10px;
+    vertical-align: middle;
+  }
+  .prev-revision {
+    float: left;
+  }
+  .next-revision {
+    float: right;
   }
 }

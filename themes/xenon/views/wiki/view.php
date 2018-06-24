@@ -75,21 +75,21 @@ $this->title = $model->title;
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-3">
-                    <div class="wiki-side-panel">
+                    <div class="side-panel">
                         <?= $this->render('_metadata.php', ['model' => $model, 'extended' => true]) ?>
                     </div>
-                    <div class="wiki-side-panel">
+                    <div class="side-panel">
                         <?= Html::a('Update Article', ['wiki/update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
                     </div>
 
                     <?php if (Yii::$app->user->can(\app\components\UserPermissions::PERMISSION_MANAGE_WIKI)): ?>
-                        <div class="wiki-side-panel">
+                        <div class="side-panel">
                             <?= Html::a('View as Admin', ['wiki-admin/view', 'id' => $model->id]) ?>
                         </div>
                     <?php endif; ?>
 
-                    <div class="wiki-side-panel revisions">
-                        <h3 class="wiki-side-title">Revisions</h3>
+                    <div class="side-panel revisions">
+                        <h3 class="side-title">Revisions</h3>
 
                         <?= $this->render('_revisions.php', ['model' => $model]) ?>
                     </div>
@@ -97,8 +97,8 @@ $this->title = $model->title;
                     <?php $related = $model->getRelatedWikis() ?>
                     <?php if (!empty($related)): ?>
 
-                        <div class="wiki-side-panel related">
-                            <h3 class="wiki-side-title">Related Articles</h3>
+                        <div class="side-panel related">
+                            <h3 class="side-title">Related Articles</h3>
 
                             <ul>
                                 <?php foreach ($related as $wiki) {

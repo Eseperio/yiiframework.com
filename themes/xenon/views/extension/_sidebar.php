@@ -1,71 +1,72 @@
 <?php
 
 use app\components\object\ClassType;
-use app\models\WikiCategory;
-use app\models\WikiTag;
+use app\models\ExtensionCategory;
+use app\models\ExtensionTag;
 use app\widgets\RecentComments;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 /** @var $this \yii\web\View */
 /** @var $category string */
-/** @var $version string */
-/** @var $tag \app\models\WikiTag */
+/** @var $tag \app\models\ExtensionTag */
 ?>
-<?= Html::a('<span class="big">Write</span><span class="small">new article</span>', ['create'], ['class' => 'btn btn-block btn-new-wiki-article']) ?>
+<?= Html::a('<span class="big">Create</span><span class="small">new extension</span>', ['create'], ['class' => 'btn btn-block btn-new-extension']) ?>
 
 <?php if (isset($sort)): ?>
-    <div class="side-panel">
-        <h3 class="side-title">Sorting by</h3>
-
+    <div class="side-panel"><h3 class="side-title">Sorting by</h3>
         <?= \yii\widgets\LinkSorter::widget([
             'sort' => $sort,
             'options' => [
-                'class' => 'wiki-side-menu sorter',
+                'class' => 'extension-side-menu sorter',
             ],
         ]) ?></div>
 
 <?php endif; ?>
-<div class="side-panel">
-    <h3 class="side-title">Categories</h3>
 
-    <ul class="wiki-side-menu">
+<?php if (!isset($hideCategoryAndTags)): ?>
+
+   <div class="side-panel"> <h3 class="side-title">Categories</h3>
+
+    <ul class="extension-side-menu">
         <li<?= empty($category) ? ' class="active"' : '' ?>><a
-                    href="<?= Url::to(['wiki/index', 'tag' => isset($tag) ? $tag->slug : null]) ?>">All</a></li>
-        <?php foreach (WikiCategory::findWithCountData()->all() as $cat): ?>
+                    href="<?= Url::to(['extension/index', 'tag' => isset($tag) ? $tag->slug : null]) ?>">All</a></li>
+        <?php foreach (ExtensionCategory::findWithCountData()->all() as $cat): ?>
             <li<?= isset($category) && $category == $cat->id ? ' class="active"' : '' ?>>
                 <a href="<?= Url::to([
-                    'wiki/index',
+                    'extension/index',
                     'category' => $cat->id,
                     'tag' => isset($tag) ? $tag->slug : null,
                     'version' => isset($version) ? $version : '2.0',
                 ]) ?>"><?= Html::encode($cat->name) ?> <span class="count">(<?= (int)$cat->count ?>)</span></a>
             </li>
         <?php endforeach; ?>
-    </ul>
-</div>
-<div class="side-panel">
-    <h3 class="side-title">Popular Tags</h3>
+    </ul></div>
 
-    <ul class="wiki-side-menu">
+   <div class="side-panel"> <h3 class="side-title">Popular Tags</h3>
+
+    <ul class="extension-side-menu last-side-menu">
         <li<?= empty($tag) ? ' class="active"' : '' ?>><a
-                    href="<?= Url::to(['wiki/index', 'category' => isset($category) ? $category : null]) ?>">All</a>
+                    href="<?= Url::to(['extension/index', 'category' => isset($category) ? $category : null]) ?>">All</a>
         </li>
-        <?php foreach (WikiTag::find()->orderBy(['frequency' => SORT_DESC])->limit(10)->all() as $t): ?>
+        <?php foreach (ExtensionTag::find()->orderBy(['frequency' => SORT_DESC])->limit(10)->all() as $t): ?>
             <li<?= isset($tag) && $tag->equals($t) ? ' class="active"' : '' ?>>
                 <a href="<?= Url::to([
-                    'wiki/index',
+                    'extension/index',
                     'tag' => $t->slug,
                     'category' => isset($category) ? $category : null,
                     'version' => isset($version) ? $version : '2.0',
                 ]) ?>"><?= Html::encode($t->name) ?> <span class="count">(<?= (int)$t->frequency ?>)</span></a>
             </li>
         <?php endforeach; ?>
-    </ul>
-</div>
-<div class="side-panel">
-    <?= RecentComments::widget([
-        'objectType' => ClassType::WIKI,
+    </ul></div>
+
+   <div class="side-panel">
+       <?= RecentComments::widget([
+        'objectType' => ClassType::COMMENT,
         'titleClass' => 'side-title',
-        'menuClass' => 'wiki-side-comments last-side-menu',
-    ]) ?></div>
+        'menuClass' => 'extension-side-comments last-side-menu',
+    ]) ?>
+   </div>
+
+<?php endif; ?>

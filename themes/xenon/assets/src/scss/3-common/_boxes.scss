@@ -4,3 +4,44 @@
   box-shadow: $box-shadow;
   padding: $big-space;
 }
+
+.side-panel {
+  @extend .box;
+  @include rem(padding, $small-space);
+  margin-bottom: $normal-space;
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      margin-bottom: 3px;
+      a {
+        padding-left: 4px;
+        span {
+          color: $gray-light;
+        }
+      }
+      &.active, &.asc, &.desc {
+        a {
+          color: white;
+          padding: 4px;
+          padding-left: 8px;
+          display: block;
+          background-color: $yii-blue;
+          span {
+            color:$gray-lighter;
+          }
+        }
+      }
+    }
+  }
+  .side-title {
+    color: $gray;
+    font-size: $font-size-base;
+    font-weight: bold;
+    border-bottom: 1px solid $gray-lighter;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: $small-space;
+    margin-bottom: $small-space;
+  }
+}

@@ -1,0 +1,81 @@
+.extension-index {
+  .mini-search-form {
+    padding-bottom: 0;
+    margin-top: 24px;
+  }
+
+  .summary {
+    text-align: center;
+    margin: $normal-space;
+  }
+  .extension-box {
+    box-shadow: $box-shadow;
+    background-color: white;
+    margin-bottom: $normal-space;
+    .title {
+      font-size: $font-size-base * 1.4;
+      margin-top: 0;
+    }
+    .real-title {
+      font-size: $font-size-base * 1.1;
+      margin-top: 0;
+      padding-bottom: $small-space;
+      border-bottom: 1px solid $gray-lighter;
+      a {
+        color: $gray;
+      }
+    }
+    .extension-tagline {
+      min-height: 100px;
+      color: $gray-light;
+    }
+    .extension-author {
+      color: $gray-light;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+      display: block;
+    }
+  }
+  .extension-content {
+    padding: $normal-space;
+    padding-bottom: $normal-space / 2;
+  }
+  .extension-stats {
+    display: table;
+    width: 100%;
+  }
+  .stat-cell {
+    text-align: center;
+    padding: 10px 0;
+    display: table-cell;
+    border-top:1px solid $gray-lighter;
+    &:not(:last-child) {
+      border-right: 1px solid $gray-lighter;
+    }
+    i {
+      font-size: $font-size-base * 1.35;
+      margin-right: 3px;
+    }
+  }
+  .downloads,.comments {
+    width: 70px;
+  }
+}
+
+.extension-view {
+  .extension-row {
+    @extend .box;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.btn-new-extension {
+  @extend .btn-new-wiki-article;
+}

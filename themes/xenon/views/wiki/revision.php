@@ -74,21 +74,25 @@ $this->title = $model->title . ' | Compare Revisions';
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-3">
-                    <?= $this->render('_metadata.php', [
-                        'model' => $model,
-                        'extended' => true
-                    ]) ?>
+                    <div class="side-panel"> <?= $this->render('_metadata.php', [
+                            'model' => $model,
+                            'extended' => true
+                        ]) ?></div>
 
-                    <?= Html::a('Update Article', ['wiki/update', 'id' => $model->id])?>
-
-
-                    <div class="revert">
-                        <?php echo Html::a('Revert to #'.$left->revision, array('wiki/update','id'=>$model->id,'revision'=>$left->revision)); ?> |
-                        <?php echo Html::a('Revert to #'.$right->revision, array('wiki/update','id'=>$model->id,'revision'=>$right->revision)); ?>
+                    <div class="side-panel">
+                        <?= Html::a('Update Article', ['wiki/update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
                     </div>
-                    <h3>Revisions</h3>
 
-                    <?= $this->render('_revisions.php', ['model' => $model]) ?>
+                    <div class="side-panel">
+                        <div class="revert">
+                            <?php echo Html::a('Revert to #' . $left->revision, array('wiki/update', 'id' => $model->id, 'revision' => $left->revision)); ?>
+                            |
+                            <?php echo Html::a('Revert to #' . $right->revision, array('wiki/update', 'id' => $model->id, 'revision' => $right->revision)); ?>
+                        </div>
+                    </div>
+                    <div class="side-panel revisions"><h3>Revisions</h3>
+
+                        <?= $this->render('_revisions.php', ['model' => $model]) ?></div>
                 </div>
             </div>
 

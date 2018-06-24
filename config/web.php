@@ -86,17 +86,17 @@ $config = [
                 'yii\web\JqueryAsset' => false,
                 'dosamigos\selectize\SelectizeAsset' => [
                     'depends' => [
-                        \app\assets\AppAsset::class,
+                        \app\themes\xenon\assets\XenonThemeAsset::class
                     ],
                 ],
                 'yii\jui\JuiAsset' => [
                     'depends' => [
-                        \app\assets\AppAsset::class,
+                        \app\themes\xenon\assets\XenonThemeAsset::class
                     ],
                 ],
                 'yii\grid\GridViewAsset' => [
                     'depends' => [
-                        \app\assets\AppAsset::class,
+                        \app\themes\xenon\assets\XenonThemeAsset::class
                     ],
                 ],
                 //'yii\authclient\widgets\AuthChoiceAsset' => false, //authchoice.js

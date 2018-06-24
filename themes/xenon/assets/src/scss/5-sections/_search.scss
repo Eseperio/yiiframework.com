@@ -1,0 +1,12 @@
+.search-global {
+  .list-view {
+   > div {
+     @extend .box;
+   }
+    .label {
+      font-size: $font-size-base * .8;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+}

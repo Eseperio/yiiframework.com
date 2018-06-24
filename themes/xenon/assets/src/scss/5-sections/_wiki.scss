@@ -28,30 +28,35 @@
   .vote-box {
     padding-left: $small-space;
     border-left: 1px solid $gray-lighter;
-    > div {
-      @include rem(padding-bottom, 16px);
-    }
-    > div:not(.voting) {
-      span {
-        color: $gray-light;
-        text-transform: uppercase;
-        font-size: 11px;
-      }
-    }
+  }
 
-    .tags {
-      > span:first-child {
-        display: block;
-      }
-      a {
-        @extend .label;
-        border: 1px solid $yii-blue;
-        color: $yii-blue;
-        &:hover, &:focus {
-          background-color: $yii-blue;
-        }
+}
 
+.vote-box {
+
+  > div {
+    @include rem(padding-bottom, 16px);
+  }
+  > div:not(.voting) {
+    span {
+      color: $gray-light;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+  }
+
+  .tags {
+    > span:first-child {
+      display: block;
+    }
+    a {
+      @extend .label;
+      border: 1px solid $yii-blue;
+      color: $yii-blue;
+      &:hover, &:focus {
+        background-color: $yii-blue;
       }
+
     }
   }
 }
@@ -91,6 +96,29 @@
 
         }
       }
+    }
+  }
+
+  &.revisions {
+    li {
+      text-align: center;
+      border:1px solid $gray-lighter;
+      padding: 6px;
+      margin-bottom: 10px;
+      font-size: $font-size-base * .95;
+    }
+    .wiki-revision-memo {
+      border-top:1px solid $gray-lighter;
+      padding: 6px 0;
+      color: $gray-light;
+      font-style: italic;
+    }
+  }
+  &.related {
+    li {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $gray-lighter;
     }
   }
 }
@@ -183,12 +211,12 @@
   }
 }
 
-  .wiki-row {
-    @extend .box;
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-      &:first-child {
-        margin-top: 0;
-      }
+.wiki-row {
+  @extend .box;
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    &:first-child {
+      margin-top: 0;
     }
   }
+}

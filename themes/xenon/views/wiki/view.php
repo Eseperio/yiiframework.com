@@ -28,14 +28,14 @@ $this->title = $model->title;
 
                             <?php if ($model->yii_version === null && $revision === null) {
                                 echo '<blockquote class="note"><p>'
-                                   . "This wiki article has not been tagged with a corresponding Yii version yet.<br>\nHelp us improve the wiki by "
-                                   . Html::a('updating the version information', ['wiki/update', 'id' => $model->id]) . '.</p></blockquote>';
+                                    . "This wiki article has not been tagged with a corresponding Yii version yet.<br>\nHelp us improve the wiki by "
+                                    . Html::a('updating the version information', ['wiki/update', 'id' => $model->id]) . '.</p></blockquote>';
                             } ?>
                             <?php if ($revision !== null) {
                                 $previous = $revision->findPrevious();
                                 $next = $revision->findNext();
                                 echo '<blockquote class="note"><p>'
-                                   . "You are viewing revision #" . ((int) $revision->revision) . " of this wiki article.<br>";
+                                    . "You are viewing revision #" . ((int)$revision->revision) . " of this wiki article.<br>";
                                 if ($revision->isLatest()) {
                                     echo "This is the latest version of this article.<br>";
                                     if ($previous !== null) {
@@ -75,30 +75,37 @@ $this->title = $model->title;
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-3">
-                    <?= $this->render('_metadata.php', ['model' => $model, 'extended' => true]) ?>
-
-                    <?= Html::a('Update Article', ['wiki/update', 'id' => $model->id])?>
+                    <div class="wiki-side-panel">
+                        <?= $this->render('_metadata.php', ['model' => $model, 'extended' => true]) ?>
+                    </div>
+                    <div class="wiki-side-panel">
+                        <?= Html::a('Update Article', ['wiki/update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
+                    </div>
 
                     <?php if (Yii::$app->user->can(\app\components\UserPermissions::PERMISSION_MANAGE_WIKI)): ?>
-                        <br>
-                        <?= Html::a('View as Admin', ['wiki-admin/view', 'id' => $model->id]) ?>
+                        <div class="wiki-side-panel">
+                            <?= Html::a('View as Admin', ['wiki-admin/view', 'id' => $model->id]) ?>
+                        </div>
                     <?php endif; ?>
 
-                    <h3>Revisions</h3>
+                    <div class="wiki-side-panel revisions">
+                        <h3 class="wiki-side-title">Revisions</h3>
 
-                    <?= $this->render('_revisions.php', ['model' => $model]) ?>
-
+                        <?= $this->render('_revisions.php', ['model' => $model]) ?>
+                    </div>
 
                     <?php $related = $model->getRelatedWikis() ?>
                     <?php if (!empty($related)): ?>
 
-                        <h3>Related Articles</h3>
+                        <div class="wiki-side-panel related">
+                            <h3 class="wiki-side-title">Related Articles</h3>
 
-                        <ul>
-                            <?php foreach($related as $wiki) {
-                                echo "<li>" . Html::a(Html::encode($wiki->getLinkTitle()), $wiki->getUrl()) . '</li>';
-                            } ?>
-                        </ul>
+                            <ul>
+                                <?php foreach ($related as $wiki) {
+                                    echo "<li>" . Html::a(Html::encode($wiki->getLinkTitle()), $wiki->getUrl()) . '</li>';
+                                } ?>
+                            </ul>
+                        </div>
                     <?php endif; ?>
 
                 </div>
@@ -113,7 +120,7 @@ $this->title = $model->title;
         <?= \app\widgets\Comments::widget([
             'objectType' => $model->getObjectType(),
             'objectId' => $model->getObjectId(),
-            'prompt' => 'Please only use comments to help explain the above article.<br/>If you have any questions, please ask in '.Html::a('the forum', Yii::$app->request->baseUrl . '/forum').' instead.',
+            'prompt' => 'Please only use comments to help explain the above article.<br/>If you have any questions, please ask in ' . Html::a('the forum', Yii::$app->request->baseUrl . '/forum') . ' instead.',
         ]) ?>
     </div>
 </div>

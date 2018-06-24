@@ -23,6 +23,7 @@ Update gulp config file (config.yml)
 
 Run gulp build
 
+In current yii site configurations there are customized bundles (selectize..). Those dependencies should be updated to be from the theme asset.
 
 Comments:
 

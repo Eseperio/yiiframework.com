@@ -79,7 +79,7 @@ Configure database connection in `config/params-local.php`. You may copy-paste a
 'twitter.accessTokenSecret' => ''
 ```
 
-Continure with the following commands:
+Continue with the following commands:
 
 ```
 # run migrations
